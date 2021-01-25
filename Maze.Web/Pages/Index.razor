@@ -1,0 +1,110 @@
+﻿@page "/"
+@using System.Threading
+@using System.ComponentModel.DataAnnotations
+@using Maze.Logic.Iterator
+@using System.Linq
+@using System.Reflection
+
+
+<table class="table">
+    <tbody>
+        @for (int row = 0; row < maze.Size; row++)
+        {
+            <tr>
+                @for (int col = 0; col < maze.Size; col++)
+                {
+                    <td>
+                        <h4 style="color:@maze.GetSquare(row, col).Color">
+                            @if (maze.GetSquare(row, col).IsChecked)
+                            {
+                                <strong>
+                                    @maze.GetSquare(row, col).Symbol
+                                </strong>
+
+                            }
+                            else
+                            {
+                                @maze.GetSquare(row, col).Symbol
+                            }
+                        </h4>
+
+                    </td>
+                }
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<div class="form-horizontal">
+    <fieldset>
+
+        <div class="form-group">
+            <label class="col-lg-4 control-label" for="select">Iterator Type:</label>
+            <div class="col-lg-8">
+                <select @bind="SelectIteratorType" class="form-control" id="select">
+                    <option value="0" selected>@GetDisplayName(IteratorType.CrossIterator)</option>
+                    <option value="1">@GetDisplayName(IteratorType.DiagonalIterator)</option>
+                    <option value="2">@GetDisplayName(IteratorType.FullIterator)</option>
+                </select>
+            </div>
+        </div>
+
+        <button @onclick="Countdown" class="btn btn-outline-primary">
+            <h4>
+                Iterate <span>@Number</span>
+            </h4>
+        </button>
+    </fieldset>
+</div>
+
+@code{
+    BoardAggregate maze;
+
+    [Parameter]
+    public Square Square { get; set; } = new Square();
+
+    [Parameter]
+    public int Number { get; set; } = 0;
+
+    [Parameter]
+    public int SelectIteratorType { get; set; } = 0;
+
+    protected override void OnInitialized()
+    {
+        maze = new BoardAggregate(8);
+
+        maze.Load();
+    }
+
+    void Countdown()
+    {
+        var iterator = maze.CreateIterator((IteratorType)SelectIteratorType);
+
+        var timer = new Timer(TimeCallBack, null, 1000, 1000);
+
+        var first = iterator.First();
+
+        void TimeCallBack(object state)
+        {
+            if (iterator.IsDone)
+            {
+                Square = iterator.Next();
+                Number++;
+                InvokeAsync(StateHasChanged);
+            }
+        }
+    }
+
+    string GetDisplayName(IteratorType enumValue)
+    {
+        return enumValue.GetType()?
+                        .GetMember(enumValue.ToString())?
+                        .First()?
+                        .GetCustomAttribute<DisplayAttribute>()?
+                        .Name;
+    }
+
+
+
+}
