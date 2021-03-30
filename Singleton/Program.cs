@@ -2,7 +2,7 @@
 
 namespace Singleton
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -18,32 +18,19 @@ namespace Singleton
 
             var config = Config.Instance();
             Console.WriteLine(config.Message);
-
-            PrintMsg("cruz", 33);
-            PrintMsg(name: "claudia", yearsOld: 23);
-            PrintMsg(yearsOld: 55, name: "fernando");
-
-            string? name = null;
-            if (name is null)
-                Console.WriteLine("null");
         }
 
-        static void PrintMsg(string name, int yearsOld){
-            Console.WriteLine($"My name is {name} and i am {yearsOld} years old");
-        }
     }
-
-
-
 
     public class Config
     {
-        private static readonly Config _instance = new Config();
+        private static readonly Config _instance = new();
 
-        public string Message { get; set; } = "";   
+        public string Message { get; set; } = "";
 
         private Config()
         {
+            Console.WriteLine("Hello World!");
         }
 
         public static Config Instance()

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Adapter", "Adapter.csproj", "{0442A20B-25A5-4F83-8EC8-44A3FA9C08CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter.csproj", "{0442A20B-25A5-4F83-8EC8-44A3FA9C08CD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bridge", "..\Bridge\Bridge.csproj", "{13B5D902-9E04-4003-83E2-3AE2F09C2AD3}"
 EndProject
@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flyweight", "..\Flyweight\F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeTest", "..\CodeTest\CodeTest.csproj", "{4B358744-6B45-4572-8E23-15E0EDEB65EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton", "Singleton\Singleton.csproj", "{A91F80EA-2A3A-4976-B327-1E2968F38263}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Singleton", "..\Singleton\Singleton.csproj", "{B96DAE33-505B-4BBE-9C7E-77234EB5B898}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,10 +73,10 @@ Global
 		{4B358744-6B45-4572-8E23-15E0EDEB65EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B358744-6B45-4572-8E23-15E0EDEB65EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B358744-6B45-4572-8E23-15E0EDEB65EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A91F80EA-2A3A-4976-B327-1E2968F38263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A91F80EA-2A3A-4976-B327-1E2968F38263}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A91F80EA-2A3A-4976-B327-1E2968F38263}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A91F80EA-2A3A-4976-B327-1E2968F38263}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B96DAE33-505B-4BBE-9C7E-77234EB5B898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B96DAE33-505B-4BBE-9C7E-77234EB5B898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B96DAE33-505B-4BBE-9C7E-77234EB5B898}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B96DAE33-505B-4BBE-9C7E-77234EB5B898}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

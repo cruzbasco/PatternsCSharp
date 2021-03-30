@@ -18,15 +18,16 @@ namespace CompositePattern.Maths
 
         public ComplexExpression(string expression)
         {
-            var (left, right) = DivideExpression(expression);
+            var (left, operation, right) = DivideExpression(expression);
             int number;
 
+            this.operation = operation;
             leftExpression = int.TryParse(left, out number) ? new SimpleExpression(number) : (IMathExpression)new ComplexExpression(left);
 
             rightExpression = int.TryParse(right, out number) ? new SimpleExpression(number) : (IMathExpression)new ComplexExpression(right);
         }
 
-        private Tuple<string, string> DivideExpression(string expression)
+        private Tuple<string, string, string> DivideExpression(string expression)
         {
             //operation = eseOperadorEncontrado;
             throw new NotImplementedException();

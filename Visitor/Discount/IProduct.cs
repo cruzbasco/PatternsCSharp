@@ -68,9 +68,9 @@ namespace Visitor.Discount
         private readonly decimal _price;
 
         private decimal _discount;
-        private decimal _nodiscount;
-        private decimal _standarddiscount;
-        private decimal _bfdiscount;
+        //private decimal _nodiscount;
+        //private decimal _standarddiscount;
+        //private decimal _bfdiscount;
 
 
         public Laptop(string name, decimal price)
