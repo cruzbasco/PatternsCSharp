@@ -16,40 +16,72 @@ namespace Singleton
 
             var b1 = new ClassB("b1");
 
+            var config = Config.Instance();
+            Console.WriteLine(config.Message);
 
-            Console.WriteLine(Config.Message);
+            PrintMsg("cruz", 33);
+            PrintMsg(name: "claudia", yearsOld: 23);
+            PrintMsg(yearsOld: 55, name: "fernando");
+
+            string? name = null;
+            if (name is null)
+                Console.WriteLine("null");
+        }
+
+        static void PrintMsg(string name, int yearsOld){
+            Console.WriteLine($"My name is {name} and i am {yearsOld} years old");
         }
     }
 
 
-    public static class Config
+
+
+    public class Config
     {
-        public static string Message { get; set; }
+        private static readonly Config _instance = new Config();
+
+        public string Message { get; set; } = "";   
+
+        private Config()
+        {
+        }
+
+        public static Config Instance()
+        {
+            return _instance;
+        }
+
     }
 
 
 
     public class ClassA
     {
+        private Config config = Config.Instance();
+
         public ClassA(string message)
         {
-            Config.Message += message;
+            config.Message += message;
         }
     }
 
 
     public class ClassB
     {
+        private Config config = Config.Instance();
+
         public ClassB(string message)
         {
-            Config.Message += message;
+            config.Message += message;
         }
     }
     public class ClassC
     {
+        private Config config = Config.Instance();
+
         public ClassC(string message)
         {
-            Config.Message += message;
+            config.Message += message;
         }
     }
 
