@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Adapter.Adapter;
 
 namespace problem
 {
@@ -6,14 +8,21 @@ namespace problem
     {
         static void Main(string[] args)
         {
+            // do some stuff here
 
-            /* problema 
-               1. se necesita autos q funcionen a diesel y gasolina
+            IAdapter adapter = new LegacyCalculatorAdapter();
 
-            */
+            var products = new List<Products>()
+            {
+                new Products(),
+                new Products(),
+                new Products(),
+                new Products(),
 
-            Car car1 = new DieselCar();
-            Car car2 = new GasolineCar();
+            };
+
+            int totalFee = adapter.Calculate(products);
+
 
 
         }

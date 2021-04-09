@@ -27,41 +27,6 @@ namespace Bridge
             truck.CalculateMaxRange();
             train.CalculateMaxRange();
 
-
-            //clases X funcionalidades 
-            //    3  x  4    => 12
-
-            //clases +  funcionalidades
-            //    3  +  4    => 7
-
-
-            //cuentas 
-            //    ahorro
-            //    ahorro plus
-            //    corriente
-
-            //nacionalidad
-            //    nacional
-            //    residente
-            //    extranjero
-
-            //salario
-            //    bajo
-            //    medio
-            //    alto
-
-            //tipo
-            //    individuo
-            //    empresa
-            //    ong
-
-
-            //    ahorro - nacional - bajo - individuo
-            //    2 x 3 x 3 x 2 = 36
-            //    2 x 3 x 3 x 3 = 54
-
-            //cuenta (nacionalidad, salario, tipo)
-
         }
 
     }
